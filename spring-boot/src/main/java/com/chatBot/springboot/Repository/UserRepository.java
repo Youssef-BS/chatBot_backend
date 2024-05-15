@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
-    // Add custom query methods here if needed
+    boolean existsByEmail(String email);
+    User findByEmail(String email);
 }
